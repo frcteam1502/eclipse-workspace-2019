@@ -30,7 +30,7 @@ public class ArcadeDrive extends Subsystem{
         //setDefaultCommand(new MySpecialCommand());
     }
 
-	public void arcadeDrive(double moveSpeed, double rotateSpeed) {
+	public void move(double moveSpeed, double rotateSpeed) {
         double leftPwr = moveSpeed + rotateSpeed;
         double rightPwr = moveSpeed - rotateSpeed;
         

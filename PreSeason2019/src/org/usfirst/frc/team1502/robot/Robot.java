@@ -13,8 +13,11 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team1502.robot.commands.ExampleCommand;
+import org.usfirst.frc.team1502.robot.subsystems.ArcadeDrive;
+import org.usfirst.frc.team1502.robot.subsystems.Arm;
 import org.usfirst.frc.team1502.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1502.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team1502.robot.subsystems.TankDrive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,8 +29,11 @@ import org.usfirst.frc.team1502.robot.subsystems.ExampleSubsystem;
 public class Robot extends TimedRobot {
 	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
 	public static Drivetrain drivetrain = null;
-	public static OI m_oi;
-
+	public static OI m_oi; 
+	public static ArcadeDrive m_arcadeDrive = new ArcadeDrive(null, null, null, null);
+	public static TankDrive m_tankDrive = new TankDrive(null, null, null, null);
+	public static Arm m_arm = new Arm();
+	
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 

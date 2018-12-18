@@ -25,7 +25,7 @@ public class TankDrive extends Subsystem {
 		rightBack = rightBackTalon;
 	}
 	
-	public void tankDrive(double leftSpeed, double rightSpeed) {
+	public void move(double leftSpeed, double rightSpeed) {
 		double leftPwr = leftSpeed;
 		double rightPwr = rightSpeed;
 		

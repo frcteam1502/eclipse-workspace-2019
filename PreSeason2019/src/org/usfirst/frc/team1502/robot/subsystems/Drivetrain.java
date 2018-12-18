@@ -23,6 +23,7 @@ public class Drivetrain extends Subsystem {
 	
 	ArcadeDrive arcadeDrive = null;
 	TankDrive tankDrive = null;
+	Arm arm = null;
 	
 	
 	public Drivetrain() {
@@ -32,17 +33,21 @@ public class Drivetrain extends Subsystem {
 		rightFrontTalon = new TalonSRX(RobotMap.DRIVETRAIN_RIGHT_FRONT_TALON);
 		rightBackTalon = new TalonSRX(RobotMap.DRIVETRAIN_RIGHT_BACK_TALON); 
 		
+		//Drive Systems
 		arcadeDrive = new ArcadeDrive(leftFrontTalon, leftBackTalon, rightFrontTalon, rightBackTalon);
-		
 		tankDrive = new TankDrive(leftFrontTalon, leftBackTalon, rightFrontTalon, rightBackTalon);
+		
+		//Components		
+		arm = new Arm();
+		
 	}
 	
 	public void arcadeDrive(double moveSpeed, double rotateSpeed) {
-		arcadeDrive.arcadeDrive(moveSpeed, rotateSpeed);
+		arcadeDrive.move(moveSpeed, rotateSpeed);
 	}
 	
 	public void tankDrive(double leftSpeed, double rightSpeed) {
-		tankDrive.tankDrive(leftSpeed, rightSpeed);
+		tankDrive.move(leftSpeed, rightSpeed);
 	}
 
 	public static double expRate(double x, double exp) {
